@@ -107,6 +107,33 @@
         font-weight: lighter;
         color: #444;
     }
+
+    @media (max-width: 768px) {
+        .container {
+            width: 80%;
+        }
+        .content {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .content img {
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+        .text p {
+            font-size: 20px;
+            text-align: left; /* optional: keep text aligned left */
+        }
+        .projects-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .project-card {
+            padding: 10px;
+            height: 370px; 
+        }
+    }
   </style>
 </head>
 <body>
