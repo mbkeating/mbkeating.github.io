@@ -2,9 +2,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Matthew Keating",
+    "jobTitle": "Computer Science PhD Student",
+    "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Dartmouth College"
+    },
+    "url": "https://mbkeating.github.io/",
+    "sameAs": [
+        "https://scholar.google.com/citations?user=ptMw70cAAAAJ&hl=en",
+        "https://www.linkedin.com/in/matt-keating-951204175",
+        "https://github.com/mbkeating"
+    ]
+    }
+    </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matthew Keating</title>
+  <meta name="description"
+      content="Matthew Keating is a Computer Science PhD student at Dartmouth College working on topics in machine learning, HCI, music information retrieval, and security with the goal of protecting and preserving creative practice.">
+  <title>Matthew Keating PhD Student in Computer Science at Dartmouth College</title>
   <style>
     body {
         font-family: Arial, sans-serif;
@@ -13,7 +33,14 @@
         display: flex;
         justify-content: center;
     }
+    .links {
+        display: flex;
+        justify-content: center;
+        gap: 80px;               
+        align-items: center;
+    }
     .container {
+        position: absolute;
         width: 50%;
         margin-top: 50px;
     }
@@ -22,6 +49,9 @@
         font-size: 34px;
         font-weight: bold;
         margin-bottom: 30px;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding-bottom: 10px;
+        padding-top: 10px;
     }
     .left-header {
         text-align: left;
@@ -33,14 +63,17 @@
         display: flex;
         align-items: flex-start;
         margin-bottom: 60px;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding-left: 10px;
+        padding-right: 10px;
     }
-    .content img {
+    .profile-img {
+        position: fixed;
+        top: 25px;
+        right: 25px;
         width: 200px;
-        height: auto;
         border-radius: 8px;
-        margin-right: 20px;
-        flex-shrink: 0;
-        margin-top: 25px;
+        z-index: 1000;
     }
     .text p {
         font-size: 22px;
@@ -111,16 +144,22 @@
 
     @media (max-width: 768px) {
         .container {
+            position: absolute;
             width: 95%;
+            margin-top: 200px;
         }
         .content {
             flex-direction: column;
             align-items: center;
             text-align: center;
         }
-        .content img {
-            margin-right: 0;
-            margin-bottom: 20px;
+        .profile-img {
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            width: 100px;
+            border-radius: 8px;
+            z-index: 1000;
         }
         .text p {
             font-size: 20px;
@@ -149,57 +188,172 @@
   </style>
 </head>
 <body>
+    <canvas id="blobCanvas"></canvas>
     <div class="container">
-        <div class="header">Matthew Keating</div>
+        <div class="header">
+            Matthew Keating
+        </div>
+        <img src="personal_image.png" alt="Profile Picture" class="profile-img">
         <div class="content">
-            <img src="personal_image.png" alt="Profile Picture">
+            
             <div class="text">
                 <p>I am a first-year <b>computer science PhD student</b> at <b>Dartmouth College</b>, advised by <a href="https://faculty-directory.dartmouth.edu/michael-casey">Michael Casey</a>.</p>
-                <p>I work on problems in machine learning, music information retrieval, and audio signal processing. I am currently interested in utilizing <b>reinforcement learning</b> to create adaptive music education systems. I also enjoy building music video games for online cooperative creation.</p>
-                <p>I obtained my B.A. in computer science with a minor in music at Dartmouth College in 2023. After that, I spent two years as a software engineer in Boston before starting my PhD.</p>
+                <p>I work on topics in machine learning, HCI, music information retrieval, and security with the goal of protecting and preserving creative practice.</p>
+                <p>I am currently working on data attribution. I also work on interfaces for musical expression. Please email me at matthew[dot]b[dot]keating[at]dartmouth[dot]edu if you're interesting in talking or collaborating.</p>
+                <div class="links">
+                    <p><a href="https://scholar.google.com/citations?user=ptMw70cAAAAJ&hl=en">Google Scholar</a></p>
+                    <p><a href="https://www.linkedin.com/in/matt-keating-951204175">LinkedIn</a></p>
+                    <p><a href="https://github.com/mbkeating">GitHub</a></p>
+                </div>
+            </div>
+
+        </div>
+        <div class="content">
+            <div class="text">
+                <h5>I photographed all background images for this website with my phone camera. The modifications are perfomed on the website frontend by taking the average color over image chunks and plotting as circles.</h5>
             </div>
         </div>
-        <div class="left-header">Publications</div>
-        <ul>
-            <li>
-                <p>Keating, M. and Casey, M., A Graph Engine for Guitar Chord-Tone Soloing Education, Proceedings of the International Computer Music Conference (ICMC 2025), Boston, MA</p>
-            </li>
-            <li>
-                <p>Keating, M. and Casey, M., Jazz Guitar Voice-Leading Chord Fingerings With Long Short-Term Memory, AI and Music Creativity (AIMC 2024), University of Oxford, Sep. 2024.</p>
-            </li>
-            <li>
-                <p>Keating, Matthew B., "An Algorithmic Approach to Jazz Guitar Voice-Leading Chord Fingerings" (2023).</p>
-            </li>
-        </ul>
-
-        <div class="left-header">Projects</div>
-
-        <div class="projects-grid">
-            <a href="https://sheet-music-rl.web.app/" class="project-card">
-                <div class="project-title">Sight-Reading RL</div>
-                <div class="project-description">(ongoing) A website for practing sight reading. We generate sheet music using parameters estimated through reinforcement learning with rewards from the user's previous accuracy. The user uses the piano roll keys on the keyboard to play along.</div>
-            </a>
-            <a href="https://github.com/mbkeating/MusicMaker" class="project-card">
-                <div class="project-title">MusicMaker</div>
-                <div class="project-description">(ongoing) A multiplayer videogame for creating 10 second synth loops. Users can move around the screen, place synths, and program audio loops with the piano roll keys. Servers need to be self hosted (singleplayer is an option).</div>
-            </a>
-            <a href="https://voicingvault.com/" class="project-card">
-                <div class="project-title">VoicingVault</div>
-                <div class="project-description">A website for practicing jazz guitar voice leading. Users can input chord progressions by name and get rendered tablature. The generation model uses the graph approach in our ICMC2025 publication and in my senior thesis.</div>
-            </a>
-            <a href="https://github.com/mbkeating/chord-tone-generator" class="project-card">
-                <div class="project-title">Chord Tone Generator</div>
-                <div class="project-description">Codebase for ICMC2025 publication. Generates voice-led chord tone solo lines for chord progressions. Finds these efficient lines through graph construction and a shortest path search.</div>
-            </a>
-            <a href="https://github.com/mbkeating/AIMC" class="project-card">
-                <div class="project-title">Voice Leading LSTM</div>
-                <div class="project-description">Codebase for AIMC2024 publication. Generates voice-led drop-two guitar voicing tablature using an LSTM seq-to-seq model.</div>
-            </a>
-            <a href="https://github.com/mbkeating/light-synth" class="project-card">
-                <div class="project-title">Light Synth</div>
-                <div class="project-description">Play music by moving a flashlight around. Detects light sources with computer vision and maps the light location onto pitches played through a sine oscillator synthesizer.</div>
-            </a>
         </div>
     </div>
+
+
+    <script>
+        
+    const canvas = document.getElementById("blobCanvas");
+    const ctx = canvas.getContext("2d");
+
+    const img = new Image();
+    const fileOptions = ["Image1.png", "Image2.png", "Image3.png", "Image4.png", "Image5.png"];
+    img.src = fileOptions[Math.floor(Math.random() * fileOptions.length)];
+
+    const blobSize = 20;
+    let blobs = [];
+
+    let mouseX = -1000;
+    let mouseY = -1000;
+
+    window.addEventListener("mousemove", (e) => {
+        const rect = canvas.getBoundingClientRect();
+
+        mouseX = e.clientX - rect.left;
+        mouseY = e.clientY - rect.top;
+    });
+
+    img.onload = () => {
+        console.log("loaded image", img.width, img.height);
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Hidden canvas for pixel access
+        const tempCanvas = document.createElement("canvas");
+        
+        tempCanvas.width = window.innerWidth;
+        tempCanvas.height = window.innerHeight;
+
+        const tempCtx = tempCanvas.getContext("2d");
+        tempCtx.drawImage(img, 0, 0);
+
+        
+        const pixels = tempCtx.getImageData(
+            0,
+            0,
+            img.width,
+            img.height
+        ).data;
+
+        let totalHeight = window.innerHeight / (window.innerWidth / img.width);
+        let scaledImageHeight = img.height;
+        let possibleStartMax = scaledImageHeight - totalHeight;
+
+        let numDark = 500;
+
+        while (numDark > 300) {
+            numDark = 0;
+            blobs = [];
+            let start = Math.floor(Math.random() * (possibleStartMax));
+            console.log('start', start, 'image height', img.height)
+            for (let y = start; y < start + totalHeight + blobSize; y += blobSize) {
+                for (let x = 0; x < img.width; x += blobSize) {
+
+                    let r = 0;
+                    let g = 0;
+                    let b = 0;
+                    let count = 0;
+
+                    for (let dy = 0; dy < blobSize; dy++) {
+                        for (let dx = 0; dx < blobSize; dx++) {
+
+                            const px = x + dx;
+                            const py = y + dy;
+
+                            if (px >= img.width || py >= img.height)
+                                continue;
+
+                            const idx = (py * img.width + px) * 4;
+
+                            r += pixels[idx];
+                            g += pixels[idx + 1];
+                            b += pixels[idx + 2];
+
+                            count++;
+                        }
+                    }
+
+                    r = Math.floor(r / count);
+                    if (r < 10) {
+                        numDark += 1;
+                    }
+                    g = Math.floor(g / count);
+                    b = Math.floor(b / count);
+                    blobs.push({
+                        x,
+                        y: y - start,
+                        r,
+                        g,
+                        b
+                    });
+                }
+            }
+        }
+
+        console.log("blobs:", blobs.length);
+
+        animate();
+    };
+
+    function animate() {
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        for (const blob of blobs) {
+
+            let scaleX = window.innerWidth / img.width;
+
+            const dx = (blob.x * scaleX) - mouseX;
+            const dy = (blob.y * scaleX) - mouseY;
+
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            let radius = 18;
+
+            if (dist < 300) {
+                radius += (300 - dist) / 15;
+            }
+
+            
+
+            ctx.beginPath();
+            ctx.arc(blob.x * scaleX, blob.y * scaleX, radius, 0, Math.PI * 2);
+
+            ctx.fillStyle =
+                `rgba(${blob.r},${blob.g},${blob.b},1.0)`;
+
+            ctx.fill();
+        }
+
+        requestAnimationFrame(animate);
+    }
+</script>
 </body>
 </html>
