@@ -68,13 +68,16 @@
         padding-right: 10px;
     }
     .profile-img {
-        position: fixed;
-        top: 25px;
-        right: 25px;
-        width: 200px;
-        border-radius: 8px;
-        z-index: 1000;
-    }
+    position: fixed;
+    top: clamp(10px, 2vw, 25px);
+    right: clamp(10px, 2vw, 25px);
+    width: clamp(50px, 12vw, 200px);
+    height: auto;
+    max-width: 25vw;
+    object-fit: contain;
+    border-radius: 8px;
+    z-index: 1000;
+}
     .text p {
         font-size: 22px;
         margin-bottom: 15px;
@@ -145,6 +148,64 @@
         width: 100%;
         margin-top: 10px;
     }
+    * {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 100%;
+    min-width: 0;
+}
+
+.content {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+}
+
+.text {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.text p {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-wrap: break-word;
+    white-space: normal;
+    font-size: clamp(12px, 1.5vw, 22px);
+    line-height: 1.4;
+}
+
+.links {
+    max-width: 100%;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+}
+
+.links p {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.project-card {
+    min-width: 0;
+    max-width: 100%;
+    height: auto;
+    overflow-wrap: anywhere;
+}
+
+.project-title,
+.project-description {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+img, canvas, audio {
+    max-width: 100%;
+}
 
     @media (max-width: 768px) {
         .container {
@@ -188,6 +249,64 @@
             font-weight: lighter;
             color: #444;
         }
+        * {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 100%;
+    min-width: 0;
+}
+
+.content {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+}
+
+.text {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.text p {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-wrap: break-word;
+    white-space: normal;
+    font-size: clamp(12px, 1.5vw, 22px);
+    line-height: 1.4;
+}
+
+.links {
+    max-width: 100%;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+}
+
+.links p {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.project-card {
+    min-width: 0;
+    max-width: 100%;
+    height: auto;
+    overflow-wrap: anywhere;
+}
+
+.project-title,
+.project-description {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+img, canvas, audio {
+    max-width: 100%;
+}
     }
   </style>
 </head>
@@ -208,20 +327,10 @@
                     <p><a href="https://scholar.google.com/citations?user=ptMw70cAAAAJ&hl=en">Google Scholar</a></p>
                     <p><a href="https://www.linkedin.com/in/matt-keating-951204175">LinkedIn</a></p>
                     <p><a href="https://github.com/mbkeating">GitHub</a></p>
+                    <p><a href="https://soundcloud.com/m-k-593600525">SoundCloud</a></p>
                 </div>
             </div>
 
-        </div>
-        <div class="content">
-            <div class="text">
-                <p>Here's a clip of what I sound like playing guitar. The recording is one track, I used a looper pedal, a fuzz pedal, and my volume knob to get the sounds you'll hear.</h5>
-            
-                    <audio controls>
-            <source src="GuitarDemo.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-            </div>
-        </div>
         </div>
     </div>
 
